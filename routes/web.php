@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,13 +12,5 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/', function () {
-    $links = config('store.someLinks');
-    return view('welcome', compact('links'));
-});
-
-Route::get('/otherpage', function () {
-    $links = config('store.someLinks');
-    return view('other', compact('links'));
-});
